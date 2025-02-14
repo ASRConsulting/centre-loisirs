@@ -1,19 +1,23 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 import AccueilCentre from '../pages/AccueilCentre.vue';
-import ConnexionAdmin from '../pages/ConnexionAdmin.vue';
-import TableauBordAdmin from '../pages/TableauBordAdmin.vue';
 
-import Connexion from "@/views/PageConnexion.vue";
-import Inscription from "@/views/PageInscription.vue";
+import TableauBordAdmin from '../pages/TableauBordAdmin.vue';
+import GestionActivites from "@/views/GestionActivites.vue";
+
+import PageConnexion from "@/views/PageConnexion.vue";
+import PageInscription from "@/views/PageInscription.vue";
+
 
 const routes: Array<RouteRecordRaw> = [
   { path: "/", component: AccueilCentre },
-  { path: "/connexionAdmin", component: ConnexionAdmin },
-  { path: "/admin", component: TableauBordAdmin, meta: { requiresAuth: true } },
 
-  { path: "/connexion", component: Connexion },
-  { path: "/inscription", component: Inscription }
+  { path: "/tableauBordAdmin", component: TableauBordAdmin, meta: { requiresAuth: true } },
+
+  { path: "/PageConnexion", component: PageConnexion },
+  { path: "/PageInscription", component: PageInscription},
+
+  { path: "/GestionActivites", component: GestionActivites }
 ];
 
 const router = createRouter({

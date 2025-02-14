@@ -1,8 +1,8 @@
 <template>
   <nav>
     <router-link to="/">Accueil</router-link> |
-    <router-link to="/ConnexionAdmin">Connexion</router-link> |
-    <router-link to="/TableauBordAdmin">Tableau de bord</router-link>
+    <router-link to="/PageConnexion">Se connecter</router-link> |
+    <router-link to="/PageInscription">S'inscrire</router-link>
   </nav>
   <router-view/>
 </template>

@@ -17,8 +17,9 @@ const inscription = async () => {
   }
   try {
     await createUserWithEmailAndPassword(auth, email.value, password.value);
-    router.push("/connexion"); // Redirige vers la connexion après inscription
+    router.push("/Pageconnexion"); // Redirige vers la connexion après inscription
   } catch (error) {
+    console.error(error); // Affiche l'erreur exacte dans la console
     errorMsg.value = "Erreur lors de l'inscription.";
   }
 };
@@ -45,7 +46,7 @@ const inscription = async () => {
         <button type="submit" class="mt-4 w-full bg-green-500 text-white p-2 rounded">S'inscrire</button>
       </form>
       <p class="mt-4 text-center">
-        Déjà un compte ? <router-link to="/connexion" class="text-blue-600">Se connecter</router-link>
+        Déjà un compte ? <router-link to="/PageConnexion" class="text-blue-600">Se connecter</router-link>
       </p>
     </div>
   </div>

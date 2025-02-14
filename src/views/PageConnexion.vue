@@ -36,7 +36,7 @@ const connexion = async () => {
         <button type="submit" class="mt-4 w-full bg-blue-500 text-white p-2 rounded">Se connecter</button>
       </form>
       <p class="mt-4 text-center">
-        Pas encore de compte ? <router-link to="/inscription" class="text-blue-600">S'inscrire</router-link>
+        Pas encore de compte ? <router-link to="/PageInscription" class="text-blue-600">S'inscrire</router-link>
       </p>
     </div>
   </div>
