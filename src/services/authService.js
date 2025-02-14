@@ -1,4 +1,5 @@
 import { auth } from "@/firebaseConfig";
+
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 // Fonction pour inscrire un utilisateur

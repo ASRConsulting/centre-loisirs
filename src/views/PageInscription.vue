@@ -1,7 +1,8 @@
 <script setup>
 import { ref } from "vue";
-import { auth } from "@/firebaseConfig";
+import { inscription } from "../services/authService";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebaseConfig";
 import { useRouter } from "vue-router";
 
 const email = ref("");
@@ -10,7 +11,7 @@ const confirmPassword = ref("");
 const errorMsg = ref("");
 const router = useRouter();
 
-const inscription = async () => {
+const handleInscription = async () => {
   if (password.value !== confirmPassword.value) {
     errorMsg.value = "Les mots de passe ne correspondent pas.";
     return;
@@ -29,7 +30,7 @@ const inscription = async () => {
   <div class="flex items-center justify-center min-h-screen bg-gray-100">
     <div class="bg-white p-8 rounded-lg shadow-lg w-96">
       <h2 class="text-2xl font-bold text-center mb-4">Inscription</h2>
-      <form @submit.prevent="inscription">
+      <form @submit.prevent="handleInscription">
         <div>
           <label class="block mb-2">Email</label>
           <input v-model="email" type="email" class="w-full p-2 border rounded" required />
