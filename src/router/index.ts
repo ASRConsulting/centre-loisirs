@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import AccueilCentre from '@/views/AccueilCentre.vue';
-import ConnexionAdmin from '@/views/ConnexionAdmin.vue';
-import TableauBordAdmin from '@/views/TableauBordAdmin.vue';
+import AccueilCentre from '../pages/AccueilCentre.vue';
+import ConnexionAdmin from '../pages/ConnexionAdmin.vue';
+import TableauBordAdmin from '../pages/TableauBordAdmin.vue';
 
 const routes: Array<RouteRecordRaw> = [
   { path: "/", component: AccueilCentre },
