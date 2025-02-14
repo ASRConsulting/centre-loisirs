@@ -2,11 +2,20 @@ import { db } from "@/firebaseConfig";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 
 // Fonction pour ajouter une activité
-export const ajouterActivite = async (titre, description) => {
+export const ajouterActivite = async (titre, description, image, lieu, equipement, saison, ageAutorise, tailleAutorisee) => {
   try {
+// Vérifiez si equipement est déjà un tableau, sinon transformez-le en tableau
+const equipementArray = Array.isArray(equipement) ? equipement : equipement.split(",").map(item => item.trim());
+
     const docRef = await addDoc(collection(db, "activites"), {
       titre: titre,
       description: description,
+      image,
+      lieu,
+      equipement: equipement.split(",").map(item => item.trim()),  // Transformer la chaîne en tableau
+      saison,
+      age_autorise: ageAutorise,
+      taille_autorisee: tailleAutorisee,
       date: new Date()
     });
     console.log("Activité ajoutée avec ID :", docRef.id);
